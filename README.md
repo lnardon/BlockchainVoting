@@ -1,4 +1,4 @@
-# [Blockcahin Voting](http://localhost:3000).
+# [Blockchain Voting](http://localhost:3000)
 
 ## What was used
 
