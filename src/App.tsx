@@ -2,7 +2,7 @@ import { useState } from "react";
 import Web3 from "web3";
 import { AbiItem } from "web3-utils";
 
-import "./App.css";
+import styles from "./App.module.css";
 
 declare global {
   interface Window {
@@ -44,9 +44,13 @@ function App() {
   }
 
   return (
-    <div>
-      <div className="App">Blockchain Voting</div>
-      <button onClick={activate}>Connect Metamask</button>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Blockchain Voting</h1>
+      {!account && (
+        <button className={styles.connectBtn} onClick={activate}>
+          Connect Metamask
+        </button>
+      )}
       <div>{balance}</div>
     </div>
   );
