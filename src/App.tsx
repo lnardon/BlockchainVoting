@@ -3,6 +3,7 @@ import Web3 from "web3";
 import { AbiItem } from "web3-utils";
 
 import styles from "./App.module.css";
+import Modal from "./components/Modal";
 
 declare global {
   interface Window {
@@ -14,6 +15,8 @@ function App() {
   const [web3, setWeb3] = useState(new Web3());
   const [account, setAccount] = useState("");
   const [balance, setBalance] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const [modalContentIndex, setModalContentIndex] = useState(7);
 
   async function activate() {
     if (window.ethereum) {
@@ -43,6 +46,13 @@ function App() {
     return true;
   }
 
+  function modalContent() {
+    switch (modalContentIndex) {
+      default:
+        return <h1>Null</h1>;
+    }
+  }
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Blockchain Voting</h1>
@@ -52,6 +62,12 @@ function App() {
         </button>
       )}
       <div>{balance}</div>
+      <button onClick={() => setIsOpen(true)}>Open Modal</button>
+      <Modal
+        isOpen={isOpen}
+        handleClose={() => setIsOpen(false)}
+        renderProps={modalContent}
+      />
     </div>
   );
 }
