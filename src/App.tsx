@@ -48,10 +48,7 @@ function App() {
   }
 
   function modalContent() {
-    switch (modalContentIndex) {
-      default:
-        return <h1>Null</h1>;
-    }
+    return <button onClick={() => setIsOpen(false)}>Close Modal</button>;
   }
 
   return (
@@ -63,7 +60,7 @@ function App() {
           </h1>
         </div>
         <div className={styles.splash}>
-          {!account && (
+          {account && (
             <button className={styles.connectBtn} onClick={activate}>
               Connect Metamask
             </button>
@@ -72,7 +69,9 @@ function App() {
       </div>
       {/* <div className={styles.actions}>
         <div>YOUR BALANCE:{balance}</div>
-        <button onClick={() => setIsOpen(true)}>Create </button>
+        <button onClick={() => setIsOpen(true)} className={styles.createBtn}>
+          Create Voting Poll
+        </button>
       </div> */}
       <ContractSection />
       <Modal

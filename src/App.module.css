@@ -12,7 +12,7 @@
   width: 100%;
   max-width: 1400px;
   height: 100%;
-  min-height: 90vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,6 +29,7 @@
   font-size: 5rem;
   line-height: 5rem;
   font-weight: 700;
+  animation: appear 0.7s ease;
 }
 
 .splash {
@@ -40,9 +41,37 @@
 .connectBtn {
   padding: 0.5rem 1rem;
   background-color: transparent;
-  border: 2px solid red;
+  border: 2px solid white;
   border-radius: 0.25rem;
   color: #fafafa;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.createBtn {
+  outline: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: rgb(86, 253, 86);
+  transition: all 0.3s ease;
+  margin: 2rem 1rem;
+}
+
+.createBtn:hover {
+  transform: scale(1.07);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

@@ -36,3 +36,26 @@
   font-size: 0.9rem;
   font-weight: 700;
 }
+
+.contractInteraction {
+  margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  background-color: rgba(236, 235, 235, 0.068);
+  border-radius: 0.5rem;
+  color: aliceblue;
+  animation: slideDown 0.7s ease;
+}
+
+@keyframes slideDown {
+  from {
+    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 0%);
+  }
+
+  to {
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+  }
+}
