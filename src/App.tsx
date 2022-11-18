@@ -4,6 +4,7 @@ import { AbiItem } from "web3-utils";
 
 import styles from "./App.module.css";
 import Modal from "./components/Modal";
+import ContractSection from "./components/ContractSection";
 
 declare global {
   interface Window {
@@ -55,14 +56,25 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Blockchain Voting</h1>
-      {!account && (
-        <button className={styles.connectBtn} onClick={activate}>
-          Connect Metamask
-        </button>
-      )}
-      <div>{balance}</div>
-      <button onClick={() => setIsOpen(true)}>Open Modal</button>
+      <div className={styles.landingContainer}>
+        <div className={styles.text}>
+          <h1 className={styles.title}>
+            Blockchain <br /> Voting
+          </h1>
+        </div>
+        <div className={styles.splash}>
+          {!account && (
+            <button className={styles.connectBtn} onClick={activate}>
+              Connect Metamask
+            </button>
+          )}
+        </div>
+      </div>
+      {/* <div className={styles.actions}>
+        <div>YOUR BALANCE:{balance}</div>
+        <button onClick={() => setIsOpen(true)}>Create </button>
+      </div> */}
+      <ContractSection />
       <Modal
         isOpen={isOpen}
         handleClose={() => setIsOpen(false)}
