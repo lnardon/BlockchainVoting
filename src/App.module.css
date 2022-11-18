@@ -1,17 +1,40 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  background-color: #191919;
+  background-color: #0d0c13;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
+.landingContainer {
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem;
+}
+
+.text {
+  display: flex;
+  flex: 1;
+}
+
 .title {
   color: #fafafa;
-  font-size: 2.5rem;
-  margin: 4rem 0rem;
+  font-size: 5rem;
+  line-height: 5rem;
+  font-weight: 700;
+}
+
+.splash {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .connectBtn {
